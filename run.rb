@@ -1,4 +1,4 @@
-#require 'pry'
+require 'pry'
 
 zoos = {
     "Bronx Zoo" => {
@@ -51,8 +51,8 @@ zoos = {
             {
                 species: "Elephant",
                 count: 2
-            },
-            {
+        },
+           {
                 species: "Bird",
                 count: 6
             }
@@ -65,8 +65,8 @@ zoos = {
 
 
 
-#zoos["Central Park Zoo"][:animals].push({ species: "Wolf", count: 4 })
-#puts zoos
+zoos["Central Park Zoo"][:animals].push({ species: "Wolf", count: 4 })
+puts zoos
 
 
 
@@ -76,12 +76,20 @@ zoos = {
 
 zoos["Bronx Zoo"][:animals][0][:count]+=1
 puts zoos
-
+#binding.pry
 
 # Each of the zoos in the city just received 2 pandas. Alter the `zoos` information to reflect this new change:
 # In the array of animals under each Zoo, shovel this hash: { species: "Panda", count: 2 }
 
+new_array=zoos.map do |iterator, value|
+  #  binding.pry
+  value[:animals]<<{ species: "Panda", count: 2 }
+ # binding.pry
+end
 
+puts new_array
+new_array=zoos
+puts zoos
 
 
 
