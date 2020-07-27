@@ -1,4 +1,4 @@
-require 'pry'
+#require 'pry'
 
 zoos = {
     "Bronx Zoo" => {
@@ -64,11 +64,11 @@ zoos = {
 # Put this hash: { species: "Wolf", count: 4 } in the array under the `:animals` key in Central Park Zoo
 
 
-zoos["Central Park Zoo"][:animals]= { species: "Wolf", count: 4 }
+#zoos["Central Park Zoo"][:animals]= { species: "Wolf", count: 4 }
 
 
-zoos
-
+zoos["Central Park Zoo"][:animals].push({ species: "Wolf", count: 4 })
+puts zoos
 
 
 
