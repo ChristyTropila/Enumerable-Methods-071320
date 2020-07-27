@@ -1,4 +1,4 @@
-require 'pry'
+#require 'pry'
 
 zoos = {
     "Bronx Zoo" => {
@@ -64,10 +64,9 @@ zoos = {
 # Put this hash: { species: "Wolf", count: 4 } in the array under the `:animals` key in Central Park Zoo
 
 
-zoos[:Central Park Zoo][:animals][0] = {species: "Wolf", count: 4}
 
-zoos
-
+#zoos["Central Park Zoo"][:animals].push({ species: "Wolf", count: 4 })
+#puts zoos
 
 
 
@@ -75,8 +74,8 @@ zoos
 # Increment the number for the `:count` key in the "Penguin" hash in the Bronx Zoo array by 1. 
 # You can assume that the animal at index 0 will always be the "Penguin" hash.
 
-
-
+zoos["Bronx Zoo"][:animals][0][:count]+=1
+puts zoos
 
 
 # Each of the zoos in the city just received 2 pandas. Alter the `zoos` information to reflect this new change:
