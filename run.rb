@@ -64,6 +64,11 @@ zoos = {
 # Put this hash: { species: "Wolf", count: 4 } in the array under the `:animals` key in Central Park Zoo
 
 
+zoos["Central Park Zoo"][:animals]= { species: "Wolf", count: 4 }
+
+
+zoos
+
 
 
 
