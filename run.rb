@@ -116,18 +116,6 @@ puts zoos
 # In other words, you're given a `name_of_zoo` variable that is a string.
 # Return the price associated with the `name_of_zoo` variable.
 
-def ticket_price(name_of_zoo)
-  zoos.each do |loc, attr|
-        if loc == name_of_zoo
-             price =  attr.each do |k, v|
-                if price[k] == :price
-                    puts price[v]
-                end
-            end
-        end
-    end
-end
-
 
 
 # No matter which 1 of the 3 variable assignment you choose, your code should work:
@@ -136,7 +124,17 @@ end
 # name_of_zoo = "Staten Island Zoo" => returns 10
 
 
-
+def ticket_price(name_of_zoo)
+    zoos.each do |loc, attr|
+          if loc == name_of_zoo
+               price =  attr.each do |k, v|
+                  if price[k] == :price
+                      puts price[v]
+                  end
+              end
+          end
+      end
+  end
 
 
 # Return the sum of all the zoos' price. 
