@@ -91,64 +91,44 @@ end
 # Rather than assuming that the animal at index 2 will always be the "Tiger" hash:
 # First find the "Tiger" hash from the array of Animals at the Bronx Zoo and then, access the value under the ":count" key
 
-    
-    zoos.each do |loc, attr|
-        if loc == "Bronx Zoo"
-            attr.each do |k, v|
-                if k == :animals
-                    tiger = v.each do |animal|
-                        if animal[:species] == "Tiger"
-                            puts animal[:count]
-                        end
-                    end
-                    # puts tiger[:count]
-                end
-            end
-        end
+
+ tiger= zoos["Bronx Zoo"][:animals].find do |animal_hash|
+        animal_hash[:species]=="Tiger"
     end
 
-
-
-
+#puts tiger[:count]
 
 
 # Generalize the process to find the ticket price of a specific zoo.
 # In other words, you're given a `name_of_zoo` variable that is a string.
 # Return the price associated with the `name_of_zoo` variable.
 
-
-
 # No matter which 1 of the 3 variable assignment you choose, your code should work:
-# name_of_zoo = "Bronx Zoo" => returns 25
+name_of_zoo = "Bronx Zoo" # returns 25
 # name_of_zoo = "Central Park Zoo" => returns 18
 # name_of_zoo = "Staten Island Zoo" => returns 10
 
 
-def ticket_price(name_of_zoo)
-
-    name_of_zoo.class == String
-    
-    zoos.each do |loc, attr|
-          if loc == name_of_zoo
-                attr.each do |k, v|
-                  if k == :price
-                      puts v
-                  end
-              end
+     zoos.each do |loc, attr|
+       if loc == name_of_zoo
+        #puts attr[:price]
           end
       end
-end
+#binding.pry
+
+
 
 
 # Return the sum of all the zoos' price. 
 # The return value should be: 53 
 
-#PUSH ALL THE PRICES INTO A NEW ARRY
-#FIND OUT THE SUM USING THE EXAMPLE BELOW:
-
-[#, #, #].reduce(0) { |total, num| total + num}
-#=> 100 
-
+    sum_array=[]
+        zoos.each do |loc, attr|
+            sum_array.push(attr[:price])
+             #binding.pry
+        end
+       sum = sum_array.reduce(0) { |total, num| total + num}
+       #puts sum
 
 
 
@@ -156,11 +136,12 @@ end
 # The return value should be an array of strings: ["Bronx", "Manhattan", "Staten Island"]
 # Consider which higher-level enumerable method(s) you'd use here.
 
-#find_all
-#select
-# push into a new array
 
 
+        zoos.collect do |loc, attr|
+         puts attr[:location]
+        end 
+ 
 
 # Find all the zoos that are open on the weekend. 
 # The return value should be a hash with two keys: ["Bronx Zoo", "Central Park Zoo"]
