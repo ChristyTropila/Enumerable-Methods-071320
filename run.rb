@@ -64,7 +64,7 @@ zoos = {
 # Put this hash: { species: "Wolf", count: 4 } in the array under the `:animals` key in Central Park Zoo
 
 zoos["Central Park Zoo"][:animals].push({ species: "Wolf", count: 4 })
-puts zoos
+#puts zoos
 
 
 # The 2 penguins in the Bronx Zoo just had a baby. Alter the `zoos` information to reflect this new change:
@@ -72,7 +72,7 @@ puts zoos
 # You can assume that the animal at index 0 will always be the "Penguin" hash.
 
 zoos["Bronx Zoo"][:animals][0][:count]+=1
-puts zoos
+#puts zoos
 #binding.pry
 
 # Each of the zoos in the city just received 2 pandas. Alter the `zoos` information to reflect this new change:
@@ -84,7 +84,7 @@ zoos.map do |iterator, value|
  # binding.pry
 end
 
-puts zoos
+#puts zoos
 
 
 # Return the number of Tigers at the Bronx Zoo.
@@ -125,21 +125,29 @@ puts zoos
 
 
 def ticket_price(name_of_zoo)
+
+    name_of_zoo.class == String
+    
     zoos.each do |loc, attr|
           if loc == name_of_zoo
-               price =  attr.each do |k, v|
-                  if price[k] == :price
-                      puts price[v]
+                attr.each do |k, v|
+                  if k == :price
+                      puts v
                   end
               end
           end
       end
-  end
+end
 
 
 # Return the sum of all the zoos' price. 
 # The return value should be: 53 
 
+#PUSH ALL THE PRICES INTO A NEW ARRY
+#FIND OUT THE SUM USING THE EXAMPLE BELOW:
+
+[#, #, #].reduce(0) { |total, num| total + num}
+#=> 100 
 
 
 
@@ -148,7 +156,9 @@ def ticket_price(name_of_zoo)
 # The return value should be an array of strings: ["Bronx", "Manhattan", "Staten Island"]
 # Consider which higher-level enumerable method(s) you'd use here.
 
-
+#find_all
+#select
+# push into a new array
 
 
 
