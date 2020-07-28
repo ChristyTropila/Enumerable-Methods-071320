@@ -138,10 +138,11 @@ name_of_zoo = "Bronx Zoo" # returns 25
 
 
 
-        zoos.collect do |loc, attr|
-         puts attr[:location]
+      new_array = zoos.map do |loc, attr|
+          attr[:location]
+         #binding.pry
         end 
- 
+      p new_array  
 
 # Find all the zoos that are open on the weekend. 
 # The return value should be a hash with two keys: ["Bronx Zoo", "Central Park Zoo"]
