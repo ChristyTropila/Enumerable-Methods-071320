@@ -78,14 +78,12 @@ puts zoos
 # Each of the zoos in the city just received 2 pandas. Alter the `zoos` information to reflect this new change:
 # In the array of animals under each Zoo, shovel this hash: { species: "Panda", count: 2 }
 
-new_array=zoos.map do |iterator, value|
+zoos.map do |iterator, value|
   #  binding.pry
   value[:animals]<<{ species: "Panda", count: 2 }
  # binding.pry
 end
 
-puts new_array
-new_array=zoos
 puts zoos
 
 
@@ -114,10 +112,21 @@ puts zoos
 
 
 
-
 # Generalize the process to find the ticket price of a specific zoo.
 # In other words, you're given a `name_of_zoo` variable that is a string.
 # Return the price associated with the `name_of_zoo` variable.
+
+def ticket_price(name_of_zoo)
+  zoos.each do |loc, attr|
+        if loc == name_of_zoo
+             price =  attr.each do |k, v|
+                if price[k] == :price
+                    puts price[v]
+                end
+            end
+        end
+    end
+end
 
 
 
