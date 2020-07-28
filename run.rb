@@ -64,7 +64,7 @@ zoos = {
 # Put this hash: { species: "Wolf", count: 4 } in the array under the `:animals` key in Central Park Zoo
 
 zoos["Central Park Zoo"][:animals].push({ species: "Wolf", count: 4 })
-puts zoos
+#puts zoos
 
 
 # The 2 penguins in the Bronx Zoo just had a baby. Alter the `zoos` information to reflect this new change:
@@ -72,7 +72,7 @@ puts zoos
 # You can assume that the animal at index 0 will always be the "Penguin" hash.
 
 zoos["Bronx Zoo"][:animals][0][:count]+=1
-puts zoos
+#puts zoos
 #binding.pry
 
 # Each of the zoos in the city just received 2 pandas. Alter the `zoos` information to reflect this new change:
@@ -84,7 +84,7 @@ zoos.map do |iterator, value|
  # binding.pry
 end
 
-puts zoos
+#puts zoos
 
 
 # Return the number of Tigers at the Bronx Zoo.
@@ -98,7 +98,7 @@ puts zoos
                 if k == :animals
                     tiger = v.each do |animal|
                         if animal[:species] == "Tiger"
-                            puts animal[:count]
+                           # puts animal[:count]
                         end
                     end
                     # puts tiger[:count]
@@ -107,35 +107,33 @@ puts zoos
         end
     end
 
+ tiger= zoos["Bronx Zoo"][:animals].find do |animal_hash|
+        animal_hash[:species]=="Tiger"
+    end
 
 
-
+tiger[:count]
 
 
 # Generalize the process to find the ticket price of a specific zoo.
 # In other words, you're given a `name_of_zoo` variable that is a string.
 # Return the price associated with the `name_of_zoo` variable.
 
-
-
 # No matter which 1 of the 3 variable assignment you choose, your code should work:
-# name_of_zoo = "Bronx Zoo" => returns 25
+name_of_zoo = "Bronx Zoo" # returns 25
 # name_of_zoo = "Central Park Zoo" => returns 18
 # name_of_zoo = "Staten Island Zoo" => returns 10
 
 
-def ticket_price(name_of_zoo)
-    zoos.each do |loc, attr|
-          if loc == name_of_zoo
-               price =  attr.each do |k, v|
-                  if price[k] == :price
-                      puts price[v]
-                  end
-              end
+
+
+     zoos.each do |loc, attr|
+       if loc == name_of_zoo
+        puts attr[:price]
           end
       end
-  end
-
+  
+binding.pry
 
 # Return the sum of all the zoos' price. 
 # The return value should be: 53 
