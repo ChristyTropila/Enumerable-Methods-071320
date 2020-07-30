@@ -103,8 +103,6 @@ end
 tiger_hash[:count]
 
 
-
-
 # Generalize the process to find the ticket price of a specific zoo.
 # In other words, you're given a `name_of_zoo` variable that is a string.
 # Return the price associated with the `name_of_zoo` variable.
@@ -118,10 +116,10 @@ price = zoos[name_of_zoo][:price]
 
 
 
-
 # Return the sum of all the zoos' price. 
 # The return value should be: 53 
 
+<<<<<<< HEAD
   total=zoos.sum do |name,zoo_hash|
     zoo_hash[:price]
   end
@@ -131,11 +129,11 @@ price = zoos[name_of_zoo][:price]
 
 
 
-
 # Return an array of all the locations where the zoos are located.
 # The return value should be an array of strings: ["Bronx", "Manhattan", "Staten Island"]
 # Consider which higher-level enumerable method(s) you'd use here.
 
+<<<<<<< HEAD
 zoo_array=zoos.map do |name, zoo_hash|
     zoo_hash[:location]
    
