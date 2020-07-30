@@ -206,7 +206,6 @@ zoo_with_highest_species = zoos.max_by do |name, zoo_hash|
     highest_animal_per_zoo[:count]
 end
 
-
 puts zoo_with_highest_species
 
 
